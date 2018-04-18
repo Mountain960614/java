@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping>
+	<class name="com.ys.entiy.LinkMan" table="t_linkman">
+	<id name="linkId"  column="linkId">
+	<!-- 主键生成策阅 -->
+	<generator class="native"></generator>
+	</id>
+	<!-- 实体类的属性 -->
+	<property name="linkName" ></property>
+	<property name="linkGender"></property>
+	<property name="linkPhone"></property>
+	<property name="linkMobile"></property>
+	<!-- 联系人所属客户 -->
+	<many-to-one name="customer" class="com.ys.entiy.Customer" column="clid"></many-to-one>
+	
+	</class>
+	</hibernate-mapping>

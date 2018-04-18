@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+<!-- 设置上传文件大小 -->
+<constant name="struts-multipart.maxSize" value="20000000"></constant>
+ <package name="demo" extends="struts-default" namespace="/">
+ <action name="user_*" class="userAction" method="{1}">
+   <result name="loginSuccess">/index.htm</result>
+   <result name="loginFailed">/login2.jsp</result>
+      </action>
+ <action name="customer_*" class="customerAction" method="{1}">
+      <result name="addPage">/jsp/customer/add.jsp</result>
+      <result name="add">/jsp/success.jsp</result>
+      <result name="customerList">/jsp/customer/list.jsp</result>
+      <result name="delete">/jsp/success.jsp</result>
+      <result name="updateCustomer">/jsp/customer/edit.jsp</result>
+      <result name="updateCustomerDetail">/jsp/customer/list.jsp</result>
+      <result name="listPage">/jsp/customer/listPage.jsp</result>
+      <result name="listConditions">/jsp/customer/list.jsp</result>
+      </action>
+   <action name="linkManAction_*" class="linkManAction" method="{1}">
+   <result name="addContactPerson">/jsp/linkman/add.jsp</result>
+   <result name="addLinkMan">/jsp/success.jsp</result>
+   <result name="input">/jsp/error.jsp</result>
+   <result name="linkManList">/jsp/linkman/list.jsp</result>
+   <result name="showLinkMan">/jsp/linkman/edit.jsp</result>
+   <result name="updateLinkMan">/jsp/success.jsp</result>
+   </action>   
+   <action name="visit_*" class="visitAction" method="{1}">
+   <result name="addCustomerVisit">/jsp/visit/add.jsp</result>
+   <result name="addVisit">/jsp/success.jsp</result>
+   </action>
+    </package>
+	
+</struts>

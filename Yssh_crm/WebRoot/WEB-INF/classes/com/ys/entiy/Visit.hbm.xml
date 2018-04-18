@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping>
+	<class name="com.ys.entiy.Visit" table="t_visit">
+	<id name="vid"  column="vid">
+	<!-- 主键生成策阅 -->
+	<generator class="native"></generator>
+	</id>
+	<!-- 实体类的属性 -->
+	<property name="vaddress" ></property>
+	<property name="vcontent"></property>
+	
+	<!-- 联系人所属客户 -->
+	<many-to-one name="customer" class="com.ys.entiy.Customer" column="cvisit"></many-to-one>
+	<many-to-one name="User" class="com.ys.entiy.User" column="uvisit"></many-to-one>
+	</class>
+	</hibernate-mapping>

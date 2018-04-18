@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping>
+	<class name="com.ys.entiy.User" table="t_user">
+	<id name="uid"  column="uid">
+	<!-- 主键生成策阅 -->
+	<generator class="native"></generator>
+	</id>
+	<!-- 实体类的属性 -->
+	<property name="username" ></property>
+	<property name="password"></property>
+	<property name="address"></property>
+	<!--客户拜访关系 -->
+	<set name="setVisit">
+	<key column="uvisit"></key>
+	<one-to-many class="com.ys.entiy.Visit"/>
+	</set>
+	</class>
+	</hibernate-mapping>

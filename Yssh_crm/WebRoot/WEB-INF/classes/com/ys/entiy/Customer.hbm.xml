@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping>
+	<class name="com.ys.entiy.Customer" table="t_customer">
+	<id name="uid"  column="uid">
+	<!-- 主键生成策阅 -->
+	<generator class="native"></generator>
+	</id>
+	<!-- 实体类的属性 -->
+	<property name="custName" ></property>
+	<property name="custLevel"></property>
+	<property name="custSource"></property>
+	<property name="custLinkman"></property>
+	<property name="custPhone"></property>
+	<property name="custMobile" ></property>
+	<property name="custAddress"></property>
+	<property name="custZip"></property>
+	<property name="custFax"></property>
+	<property name="custWebsite"></property>
+	<!-- 表示客户所有联系人 -->
+	<set name="setLinkMan" inverse="true" cascade="delete">
+	<key column="clid"></key>
+	<one-to-many class="com.ys.entiy.LinkMan"/>
+	</set>
+	
+	<set name="setVisit">
+	<key column="cvisit"></key>
+	<one-to-many class="com.ys.entiy.Visit"/>
+	</set>
+	</class>
+	</hibernate-mapping>
